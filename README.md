@@ -1,4 +1,4 @@
 dashboard
 =========
 
-Dashboard  for viewing DB as administrator
+Dashboard for viewing DB as administrator
