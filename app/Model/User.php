@@ -265,4 +265,12 @@ class User extends AppModel {
 		)
 	);
 
+	/**
+	 * getUserNum
+	 *
+	 * @return array
+	 */
+	public function getUsersNum(){
+		return $this->find('count');
+	}
 }
