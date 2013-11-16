@@ -187,4 +187,13 @@ class Group extends AppModel {
 		)
 	);
 
+	/**
+	 * getGroupsNum
+	 *
+	 * @return int
+	 */
+	public function getGroupsNum(){
+		return $this->find('count');
+	}
+
 }

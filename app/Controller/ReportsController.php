@@ -6,7 +6,7 @@ App::uses('AppController', 'Controller');
  */
 class ReportsController extends AppController {
 
-	public $uses = array('User');
+	public $uses = array('User', 'Group');
 
 /**
  *  Layout
@@ -30,6 +30,7 @@ class ReportsController extends AppController {
 
 	public function all(){
 		$this->set('users_num', $this->User->getUsersNum());
+		$this->set('groups_num', $this->Group->getGroupsNum());
 	}
 
 }
