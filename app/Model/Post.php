@@ -110,4 +110,8 @@ class Post extends AppModel {
 		)
 	);
 
+	public function getPostsNum(){
+		return $this->find('count');
+	}
+
 }
