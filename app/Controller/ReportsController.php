@@ -31,6 +31,11 @@ class ReportsController extends AppController {
 	public function all(){
 		$this->set('users_num', $this->User->getUsersNum());
 		$this->set('groups_num', $this->Group->getGroupsNum());
+<<<<<<< Updated upstream
+=======
+		$this->set('posts_num', $this->Post->getPostsNum());
+		$this->set('groups', $this->Group->find('all'));
+>>>>>>> Stashed changes
 	}
 
 }

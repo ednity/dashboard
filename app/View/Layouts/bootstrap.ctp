@@ -11,6 +11,8 @@
 
 	<!-- Le styles -->
 	<?php echo $this->Html->css('bootstrap.min'); ?>
+	<?php echo $this->Html->css('carousel'); ?>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -42,12 +44,20 @@
 
 	</div> <!-- /container -->
 
+	 <!-- FOOTER -->
+	<hr class="featurette-divider">
+	<footer>
+	<p class="pull-right"><a href="#">Back to top</a></p>
+	<p>&copy; 2013 ednity, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+	</footer>
+
 	<!-- Le javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
 	<?php echo $this->Html->script('common'); ?>
+	<?php echo $this->Html->script('holder'); ?>
 	<?php echo $this->fetch('script'); ?>
 </body>
 </html>
