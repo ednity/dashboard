@@ -1,7 +1,6 @@
 <div class="row">
-		<h2>ユーザ一覧</h2>
-
 		<table class="table table-condensed">
+			<caption>ユーザ一覧</caption>
 			<tr>
 				<th><?php echo $this->BootstrapPaginator->sort('id');?></th>
 				<th><?php echo $this->BootstrapPaginator->sort('name');?></th>
@@ -26,5 +25,7 @@
 		<?php endforeach; ?>
 		</table>
 
+		<div class="text-center">
 		<?php echo $this->BootstrapPaginator->pagination(); ?>
+		</div>
 </div>
