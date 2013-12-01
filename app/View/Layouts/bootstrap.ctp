@@ -32,7 +32,7 @@
 	?>
 </head>
 
-<body <?php if (empty($user_num)) echo 'style="margin-top:80px;"'; ?>>
+<body <?php if (empty($users_num)) echo 'style="margin-top:80px;"'; ?>>
 
 	<?php echo $this->element('common/gnav'); ?>
 	<?php echo $this->element('common/carousel'); ?>
