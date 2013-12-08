@@ -32,12 +32,9 @@
 	?>
 </head>
 
-<body <?php if (empty($users_num)) echo 'style="margin-top:80px;"'; ?>>
-
-	<?php echo $this->element('common/gnav'); ?>
-	<?php echo $this->element('common/carousel'); ?>
-
+<body>
 	<div class="container">
+		<h1 style="text-align:center">Ednity Dashboard</h1>
 
 		<?php echo $this->Session->flash(); ?>
 
