@@ -276,7 +276,4 @@ class User extends AppModel {
 		return $this->find('count');
 	}
 
-	public function findGroups(){
-		return $this->find('all');
-	}
 }

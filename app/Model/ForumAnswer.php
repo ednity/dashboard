@@ -1,15 +1,14 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Post Model
+ * ForumAnswer Model
  *
  * @property User $User
  * @property Group $Group
- * @property Comment $Comment
- * @property Poll $Poll
- * @property Postfile $Postfile
+ * @property ForumQuestion $ForumQuestion
+ * @property ForumComment $ForumComment
  */
-class Post extends AppModel {
+class ForumAnswer extends AppModel {
 
 /**
  * Validation rules
@@ -30,6 +29,26 @@ class Post extends AppModel {
 		'group_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'forum_question_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'body' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -60,6 +79,13 @@ class Post extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'ForumQuestion' => array(
+			'className' => 'ForumQuestion',
+			'foreignKey' => 'forum_question_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 
@@ -69,35 +95,9 @@ class Post extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'Comment' => array(
-			'className' => 'Comment',
-			'foreignKey' => 'post_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Poll' => array(
-			'className' => 'Poll',
-			'foreignKey' => 'post_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Postfile' => array(
-			'className' => 'Postfile',
-			'foreignKey' => 'post_id',
+		'ForumComment' => array(
+			'className' => 'ForumComment',
+			'foreignKey' => 'forum_answer_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
@@ -110,23 +110,11 @@ class Post extends AppModel {
 		)
 	);
 
-	public function getPostsNum($add_option=array()){
-		$option = array(
+	public function getAnswersNumByGroupId($group_id){
+		return $this->find('count', array(
 			'conditions' => array(
-				)
-			);
-		if ($add_option) {
-			$option = Hash::merge($option, $add_option);
-		}
-		return $this->find('count', $option);
-	}
-
-	public function getPostsNumByGroupId($group_id){
-		return $this->getPostsNum(array(
-			'conditions' => array(
-				'Post.group_id' => $group_id
-				)
-			));
+				'ForumAnswer.group_id' => $group_id
+			)));
 	}
 
 }

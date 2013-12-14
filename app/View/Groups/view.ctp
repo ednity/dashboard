@@ -8,6 +8,9 @@
 					<th>グループ名</th>
 					<th>グループコード</th>
 					<th>人数</th>
+					<th>投稿数</th>
+					<th>質問数（forum）</th>
+					<th>回答数（forum）</th>
 				</tr>
 			</thead>
 			<tboy>
@@ -16,6 +19,9 @@
 					<td><?php echo h($group['Group']['groupname']); ?></td>
 					<td><?php echo h($group['Group']['groupcode']); ?></td>
 					<td><?php echo $users_num;?></td>
+					<td><?php echo $posts_num;?></td>
+					<td><?php echo $questions_num;?></td>
+					<td><?php echo $answers_num;?></td>
 				</tr>
 			</tbody>
 		</table>
@@ -124,24 +130,14 @@
 				<th><?php echo __('Id'); ?></th>
 				<th><?php echo __('Body'); ?></th>
 				<th><?php echo __('Created'); ?></th>
-				<th><?php echo __('Modified'); ?></th>
 				<th><?php echo __('User Id'); ?></th>
-				<th><?php echo __('Group Id'); ?></th>
-				<th class="actions"><?php echo __('Actions');?></th>
 			</tr>
 		<?php foreach ($group['Post'] as $post): ?>
 			<tr>
 				<td><?php echo $post['id'];?></td>
 				<td><?php echo $post['body'];?></td>
 				<td><?php echo $post['created'];?></td>
-				<td><?php echo $post['modified'];?></td>
 				<td><?php echo $post['user_id'];?></td>
-				<td><?php echo $post['group_id'];?></td>
-				<td class="actions">
-					<?php echo $this->Html->link(__('View'), array('controller' => 'posts', 'action' => 'view', $post['id'])); ?>
-					<?php echo $this->Html->link(__('Edit'), array('controller' => 'posts', 'action' => 'edit', $post['id'])); ?>
-					<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'posts', 'action' => 'delete', $post['id']), null, __('Are you sure you want to delete # %s?', $post['id'])); ?>
-				</td>
 			</tr>
 		<?php endforeach; ?>
 		</table>

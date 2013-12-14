@@ -8,7 +8,7 @@ App::uses('AppController', 'Controller');
  */
 class GroupsController extends AppController {
 
-	public $uses = array('Group', 'GroupsUser');
+	public $uses = array('Group', 'GroupsUser', 'Post', 'ForumQuestion', 'ForumAnswer');
 
 /**
  *  Layout
@@ -51,12 +51,14 @@ class GroupsController extends AppController {
 			throw new NotFoundException(__('Invalid %s', __('group')));
 		}
 		$this->set('group', $this->Group->read(null, $id));
-		$users_num = $this->GroupsUser->find('count', array(
+		$this->set('posts_num', $this->Post->getPostsNumByGroupId($id));
+		$this->set('questions_num', $this->ForumQuestion->getQuestionsNumByGroupId($id));
+		$this->set('answers_num', $this->ForumAnswer->getAnswersNumByGroupId($id));
+		$this->set('users_num', $this->GroupsUser->find('count', array(
 			'conditions' => array(
 				'GroupsUser.group_id' => $id
-				)
-			));
-		$this->set(compact('users_num'));
+			)
+		)));
 	}
 
 /**
