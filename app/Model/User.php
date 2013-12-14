@@ -18,6 +18,8 @@ App::uses('AppModel', 'Model');
  */
 class User extends AppModel {
 
+	public $recursive = -1;
+
 	public $virtualFields = array(
 		'name' => 'CONCAT(User.lastname, " ", User.firstname)'
 	);
@@ -272,5 +274,9 @@ class User extends AppModel {
 	 */
 	public function getUsersNum(){
 		return $this->find('count');
+	}
+
+	public function findGroups(){
+		return $this->find('all');
 	}
 }

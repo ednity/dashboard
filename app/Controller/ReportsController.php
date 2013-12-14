@@ -6,6 +6,8 @@ App::uses('AppController', 'Controller');
  */
 class ReportsController extends AppController {
 
+	public $recursive = -1;
+
 	public $uses = array('User', 'Post', 'Group');
 
 /**
@@ -32,7 +34,7 @@ class ReportsController extends AppController {
 		$this->set('users_num', $this->User->getUsersNum());
 		$this->set('groups_num', $this->Group->getGroupsNum());
 		$this->set('posts_num', $this->Post->getPostsNum());
-		$this->set('groups', $this->Group->find('all'));
+		$this->set('groups', $this->Group->findGroups());
 	}
 
 }

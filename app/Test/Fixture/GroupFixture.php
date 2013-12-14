@@ -31,13 +31,94 @@ class GroupFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => 1,
-			'groupname' => 'Lorem ipsum dolor sit amet',
-			'groupcode' => 'Lorem ipsum dolor ',
-			'admin_id' => 1,
-			'subject' => 'Lorem ipsum dolor sit amet',
-			'grade' => 'Lorem ipsu',
+			'id' => '1',
+			'groupname' => 'ぼくのクラス',
+			'groupcode' => 'acwz1379',
+			'admin_id' => '1',
+			'subject' => '',
+			'grade' => '1',
+			'lock' => 0
+		),
+		array(
+			'id' => '2',
+			'groupname' => 'DG',
+			'groupcode' => 'chps0178',
+			'admin_id' => '7',
+			'subject' => '',
+			'grade' => '3',
+			'lock' => 0
+		),
+		array(
+			'id' => '3',
+			'groupname' => 'capu',
+			'groupcode' => 'betw3789',
+			'admin_id' => '11',
+			'subject' => '',
+			'grade' => '9',
+			'lock' => 0
+		),
+		array(
+			'id' => '4',
+			'groupname' => '僕のクラス',
+			'groupcode' => 'glty2569',
+			'admin_id' => '13',
+			'subject' => '',
+			'grade' => '1',
+			'lock' => 0
+		),
+		array(
+			'id' => '5',
+			'groupname' => 'ANRI',
+			'groupcode' => 'efgl0146',
+			'admin_id' => '14',
+			'subject' => '',
+			'grade' => '12',
+			'lock' => 0
+		),
+		array(
+			'id' => '6',
+			'groupname' => 'ANRI',
+			'groupcode' => 'bilq0569',
+			'admin_id' => '14',
+			'subject' => '',
+			'grade' => '12',
+			'lock' => 0
+		),
+		array(
+			'id' => '7',
+			'groupname' => 'ANRI',
+			'groupcode' => 'afko2459',
+			'admin_id' => '14',
+			'subject' => '',
+			'grade' => '12',
+			'lock' => 0
+		),
+		array(
+			'id' => '8',
+			'groupname' => 'a',
+			'groupcode' => 'bdrs1256',
+			'admin_id' => '17',
+			'subject' => '',
+			'grade' => '1',
 			'lock' => 1
+		),
+		array(
+			'id' => '9',
+			'groupname' => 'a',
+			'groupcode' => 'eosv4569',
+			'admin_id' => '18',
+			'subject' => '',
+			'grade' => '5',
+			'lock' => 0
+		),
+		array(
+			'id' => '10',
+			'groupname' => '僕のクラス',
+			'groupcode' => 'actx1257',
+			'admin_id' => '20',
+			'subject' => '',
+			'grade' => '5',
+			'lock' => 0
 		),
 	);
 

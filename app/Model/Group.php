@@ -14,6 +14,7 @@ App::uses('AppModel', 'Model');
  */
 class Group extends AppModel {
 
+
 /**
  * Validation rules
  *
@@ -196,4 +197,12 @@ class Group extends AppModel {
 		return $this->find('count');
 	}
 
+	/**
+	 * getGroupsNum
+	 *
+	 * @return int
+	 */
+	public function findGroups(){
+		return $this->find('all');
+	}
 }

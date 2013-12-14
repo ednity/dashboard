@@ -34,7 +34,7 @@
 
 <body>
 	<div class="container">
-		<h1 style="text-align:center">Ednity Dashboard</h1>
+		<h1 style="text-align:center"><a href="/">Ednity Dashboard</a></h1>
 
 		<?php echo $this->Session->flash(); ?>
 

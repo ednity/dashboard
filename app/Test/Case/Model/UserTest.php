@@ -15,18 +15,9 @@ class UserTest extends CakeTestCase {
 	public $fixtures = array(
 		'app.user',
 		'app.answer',
-		'app.question',
 		'app.comment',
 		'app.post',
-		'app.forum_answer',
-		'app.forum_comment',
-		'app.forum_question',
-		'app.pollchoice',
-		'app.poll',
-		'app.quiz_attempt',
-		'app.quiz',
 		'app.group',
-		'app.groups_user'
 	);
 
 /**
@@ -50,4 +41,8 @@ class UserTest extends CakeTestCase {
 		parent::tearDown();
 	}
 
+	public function testFindGroups(){
+		$groups = $this->User->findGroups();
+		debug($groups);
+	}
 }

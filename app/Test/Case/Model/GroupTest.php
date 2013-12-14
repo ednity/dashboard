@@ -14,22 +14,11 @@ class GroupTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.group',
-		'app.admin',
-		'app.forum_answer',
-		'app.forum_comment',
-		'app.forum_question',
 		'app.post',
 		'app.user',
 		'app.answer',
-		'app.question',
 		'app.comment',
-		'app.pollchoice',
-		'app.poll',
-		'app.quiz_attempt',
-		'app.quiz',
-		'app.groups_user',
 		'app.postfile',
-		'app.groups_quiz'
 	);
 
 /**
@@ -51,6 +40,11 @@ class GroupTest extends CakeTestCase {
 		unset($this->Group);
 
 		parent::tearDown();
+	}
+
+	public function testfindGroups(){
+		$groups = $this->Group->getGroups();
+		$this->assertTrue( is_array($groups) );
 	}
 
 }
